@@ -1,0 +1,48 @@
+
+<%- include("partials/header"); -%>
+
+<div class="templateBody-container">
+
+ <div class="templateBody-topBreadcrumb">
+  <div class="back-to-homepage">
+   <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+   <span class="pageName-span">Bone Treatment Path- Advice</span>
+  </div>
+ </div>
+ <div class="templateBody-sideBreadcrumb">
+  <h2 class="parentPage-link">
+   <a href="#">Bone Health</a>
+  </h2>
+  <ul class="descendantsPage-links">
+   <li class="currentPage"><a href="#">Advice Page</a>
+   </li>
+   <li><a href="/bone_preventive">Preventive Bone Health</a></li>
+  </ul>
+ </div>
+
+ <div class="templateBody-main">
+
+  <h1>The following is advised</h1>
+  
+  <% Recommendations.forEach(function(Recommendation){%>
+  
+   <h3 class="fireBrick">
+    <%= Recommendation %>
+   </h3>
+  
+  
+   <% });%>
+ </div>
+</div>
+
+
+
+
+
+
+<%- include("partials/footer"); -%>
+
+
+
+
+

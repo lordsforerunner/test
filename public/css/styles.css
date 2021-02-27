@@ -1,0 +1,382 @@
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0px;
+  padding: 0;
+
+  background: linear-gradient(rgb(190, 168, 106), rgba(190, 168, 106, 0.3));
+}
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.header,
+.preHeader {
+  background-image: url(/images/headerImg.jpg);
+  width: 100vw;
+}
+
+.preHeader {
+  padding: 3% 5%;
+}
+
+.navlink-wrapper {
+  display: flex;
+}
+
+@media (max-width: 780px) {
+  .navlink-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.nav-link {
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.navlink-wrapper > div {
+  font-size: 0.9rem;
+  margin-right: 10px;
+  height: 22px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+}
+.navlink-wrapper a {
+  color: rgb(29, 78, 1);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navlink-wrapper > div:hover {
+  border-bottom: 1px solid black;
+}
+
+.navlink-wrapper a:hover {
+  color: red;
+}
+
+.container-fluid {
+  padding: 3% 5%;
+}
+
+.contentItem-wrapper {
+  position: relative;
+  padding: 12px;
+}
+.preventivePath {
+  height: 35px;
+  width: 10%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 45%;
+  left: 45%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-top: 40px;
+}
+.preventivePath a {
+  color: white;
+}
+.treatmentPath {
+  height: 35px;
+  width: 10%;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  right: 45%;
+  left: 45%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-bottom: 40px;
+}
+.treatmentPath a {
+  color: lightseagreen;
+}
+
+.itemImage-background {
+  height: 800px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.med-branch {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.synonnym h3 {
+  color: transparent;
+  transition: 1s;
+  font-weight: 600;
+  font-size: 1.5rem;
+  z-index: -1;
+  text-decoration: none;
+  display: inline;
+}
+.med-branch:hover .synonnym h3 {
+  color: red;
+  font-weight: 600;
+  font-size: 2rem;
+  z-index: 2;
+}
+
+.branchName {
+  transition: 2s;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #8f384d;
+}
+.med-branch:hover .branchName {
+  color: transparent;
+  font-weight: 600;
+}
+
+.footer {
+  text-align: center;
+  padding: 3% 5%;
+}
+
+.social-icon {
+  margin: 20px 10px;
+  font-size: 1.5rem;
+}
+.fixed-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  position: fixed;
+  bottom: 5px;
+  right: 20px;
+  color: lightseagreen;
+  z-index: 1;
+  background: white;
+}
+
+.preHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.templateBody-container {
+  position: relative;
+  padding-top: 2rem;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+  max-width: 960px;
+}
+.templateBody-container::before {
+  content: " ";
+  display: table;
+}
+.templateBody-container::after {
+  clear: both;
+}
+.templateBody-topBreadcrumb {
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  background-color: rgb(255, 195, 97);
+  padding: 0 auto;
+  display: inline-block;
+}
+.back-to-homepage {
+  padding: 0;
+  height: 100%;
+}
+
+.home-link {
+  text-decoration: none;
+  background-color: rgba(21, 128, 101, 0.5);
+  color: #fff;
+  padding: 15px 15px;
+  display: inline-block;
+}
+.pageName-span {
+  padding: 15px 15px;
+  box-sizing: border-box;
+}
+
+.templateBody-sideBreadcrumb {
+  position: relative;
+  background-color: rgb(224, 195, 100);
+  margin: 10px 10px 40px 0;
+}
+
+@media (max-width: 780px) {
+  .templateBody-topBreadcrumb {
+    width: 100%;
+  }
+}
+
+@media (min-width: 780px) {
+  .templateBody-sideBreadcrumb {
+    float: right;
+    width: 300px;
+    margin: 10px 10px 20px 40px;
+  }
+  @media (min-width: 780px) {
+    .parentPage-link {
+      margin: 0;
+    }
+  }
+}
+.parentPage-link {
+  background-color: rgba(21, 128, 101, 0.5);
+  text-align: center;
+  margin-bottom: 0;
+  padding: 20px 0;
+}
+.parentPage-link a {
+  color: #fff;
+  text-decoration: none;
+}
+.descendantsPage-links {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+.descendantsPage-links a {
+  color: rgba(18, 61, 117, 0.952);
+  text-decoration: none;
+  display: block;
+  padding: 15px 0;
+}
+.currentPage {
+  font-weight: bold;
+  background-color: rgb(255, 195, 97);
+}
+.templateBody-main {
+  line-height: 1.65;
+  display: block;
+}
+
+.Rx li {
+  list-style: none;
+}
+.Rx li h5 {
+  color: red;
+}
+.Validate li {
+  list-style: none;
+  color: red;
+}
+
+.ParentDiv {
+  height: 1250px;
+  width: 100%;
+  background: linear-gradient(rgb(180, 189, 169), rgba(180, 189, 169, 0.5));
+  line-height: 1.3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 30px;
+}
+
+.ParentDiv ul {
+  background: darkgray;
+  margin: 1px;
+}
+.ParentDiv li {
+  font-size: 0.7rem;
+}
+.redArrow {
+  color: red;
+  font-weight: 800;
+}
+.blueArrow {
+  color: blue;
+  font-weight: 800;
+}
+.red {
+  color: rgb(133, 3, 3);
+}
+.blue {
+  color: rgb(4, 4, 63);
+}
+.oneComplaint {
+  color: firebrick;
+}
+.mainComplaint {
+  border: 1px solid red;
+}
+
+.finish-btn,
+.green-btn,
+.red-btn {
+  color: white;
+  height: 40px;
+  width: 100px;
+  padding: 1px;
+  border: 1px solid black;
+}
+
+.okay-btn,
+.result-btn {
+  color: black;
+  height: 50px;
+  width: 150px;
+  padding: 1px;
+  border: 1px solid black;
+}
+
+.finish-btn {
+  background: rgb(126, 128, 0);
+}
+.green-btn {
+  background: rgb(46, 180, 46);
+}
+.result-btn {
+  background: rgb(42, 90, 250);
+  color: white;
+}
+.next-btn {
+  background: rgb(216, 204, 33);
+}
+.red-btn {
+  background: rgb(180, 37, 37);
+}
+
+.green-btn a,
+.red-btn a {
+  border: none;
+  text-decoration: none;
+  color: white;
+}
+.fireBrick {
+  color: firebrick;
+}
+#submitbtn {
+  display: block;
+}
+
+#othersymptoms {
+  display: inline-block;
+}
+
+/* #DxAge {
+  color: red;
+} */

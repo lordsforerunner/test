@@ -1,0 +1,76 @@
+<%- include("partials/header"); -%>
+
+
+<div class="templateBody-container">
+
+<div class="templateBody-topBreadcrumb">
+  <div class="back-to-homepage">
+    <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+    <span class="pageName-span">Bone Treatment Path- Biodata</span>
+  </div>
+</div>
+
+
+<div class="templateBody-sideBreadcrumb">
+  <h2 class="parentPage-link">
+    <a href="#">Bone Health</a>
+  </h2>
+  <ul class="descendantsPage-links">
+    <li class="currentPage"><a href="#">Biodata Page</a>
+    </li>
+    <li><a href="/bone_preventive">Preventive Bone Health</a></li>
+  </ul>
+</div>
+<br><br>
+
+
+
+
+  <div class="templateBody-main">
+
+<form action="/bone_biodata" method="post" id="medicalForm">
+  <label for="age">Click age that applies</label>
+  <select name="age">
+    <option value="i">0 - 11months</option>
+    <option value="i">1 - 5yrs</option>
+    <option value="i">6 - 12yrs</option>
+    <option value="i">13 - 19yrs</option>
+    <option value="ma" selected>20 - 45yrs</option>
+    <option value="ma">46 - 59yrs</option>
+    <option value="ma">60yrs and above</option>
+  </select>
+  <br><br><br>
+
+
+  <label for="gender">Select your gender</label>
+  <select name="gender">
+    <option value="m">Male</option>
+    <option value="m">Female</option>
+  </select>
+  <br><br>
+
+  <input type="checkbox" required><b style="color: firebrick;">click when done</b>
+  <br><br>
+
+
+  <br><br><br>
+  <button type="submit" name="button" class="next-btn">Next</button>
+
+</form>
+
+
+</div>
+
+
+
+
+
+
+</div>
+ 
+
+ 
+
+<%- include("partials/footer"); -%>
+
+

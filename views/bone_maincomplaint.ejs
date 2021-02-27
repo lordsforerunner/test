@@ -1,0 +1,77 @@
+<%- include("partials/header"); -%>
+
+<div class="templateBody-container">
+
+ <div class="templateBody-topBreadcrumb">
+  <div class="back-to-homepage">
+   <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+   <span class="pageName-span">Bone Treatment Path- Maincomplaint</span>
+  </div>
+ </div>
+<br><br>
+ <div class="templateBody-main">
+
+  <h1>Main Complaint</h1>
+  
+  <br>
+  
+  
+  <form action="/bone_maincomplaint" method="post" id="medicalForm">
+   <p class="fireBrick">Click only one complaint(your mainsymptom) in this section then scroll down to move to the next
+    page</p>
+   
+   
+   <input type="radio" name="mainsymptom" value="JointPain" id="mainsymptom" />You have <b>joint pains</b> and/or joint
+   stiffness
+   with or without associated joint swelling<br />
+   <input type="radio" name="mainsymptom" value="MusclePain" id="mainsymptom" />You have<b> muscle pain</b> and/or muscle
+   stiffness<br />
+   <input type="radio" name="mainsymptom" value="JointDeformity" id="mainsymptom" />You have<b> deformity or unusual
+    appearance</b> of
+   at least one <b>joint</b>
+  
+  
+   <br><br><br>
+
+   <h3 class="fireBrick" id="eureka"></h3><br>
+   <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b style="color: firebrick;">click
+    when done</b>
+   <br><br>
+   
+   <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+   <br><br>
+   <button type="reset" onClick="window.location.reload();">Reset</button>
+  
+   
+  
+  </form>
+
+
+  <script>
+   function detective() {
+    var myReka = [];
+    document.getElementById('eureka').innerHTML = "";
+
+    for (i = 0; i < mainsymptom.length; i++) {
+     myReka.push("one");
+     if (mainsymptom[i].checked) {
+      document.getElementById("submitbtn").removeAttribute("disabled");
+
+     }
+     if (mainsymptom.length === myReka.length && document.getElementById("submitbtn").disabled) {
+      document.getElementById('eureka').innerHTML = "Please check your main complaint; if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+      document.getElementById("checker").checked = false
+     }
+    }
+   }
+  </script>
+ </div>
+
+
+</div>
+
+
+
+
+
+<%- include("partials/footer"); -%>

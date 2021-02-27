@@ -1,0 +1,140 @@
+<%- include("partials/header"); -%>
+
+
+  <div class="templateBody-container">
+
+    <div class="templateBody-topBreadcrumb">
+      <div class="back-to-homepage">
+        <a href="/" class="home-link"><i class="fa fa-home"></i>Back to Homepage</a>
+        <span class="pageName-span">Bone Treatment Path- Othercomplaints</span>
+      </div>
+    </div>
+    <br><br>
+    <div class="templateBody-main">
+
+      <h1>Other Complaints</h1>
+
+      <p class="fireBrick">Click the applicable button below to proceed</p>
+      <p class="fireBrick">Note => If you have only one complaint, click appropriately and <a href="#contact">scroll
+          down</a> to move to the next page</p>
+
+
+      <form action="/bone_othercomplaints" method="post" id="medicalForm">
+
+        <input type="radio" name="trying" id="no" value="no" onclick="stallBack()"><b>I have only one
+          complaint</b>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="trying" id="yes" value="yes" onclick="symptomChecker()"><b>I have other complaints
+        </b>
+        <br><br>
+
+        <input type="checkbox" name="othersymptoms" value="PlowFever" id="othersymptoms" disabled />
+        You have low grade fever (less than
+        39<sup>0</sup>C or 102<sup>0</sup>F)
+        persisting for <b>more than one week</b><br />
+
+        <input type="checkbox" name="othersymptoms" value="OrthoSkinRash" id="othersymptoms" disabled />You have
+        associated <b>skin
+          change or
+          rash</b><br />
+
+        <input type="checkbox" name="othersymptoms" value="RsoreThroat" id="othersymptoms" disabled />Recent onset(few
+        hours or days)
+        of
+        <b>sore throat</b><br />
+
+        <input type="checkbox" name="othersymptoms" value="KneePain" id="othersymptoms" disabled /><b>Knee pain</b> with
+        or without
+        sensation
+        of cracking or grinding while bending or extending the knee joint<br />
+
+        <input type="checkbox" name="othersymptoms" value="OrthoClaudication" id="othersymptoms" disabled /><b>Muscle
+          pain</b> that
+        is
+        <b>triggered or worsened by physical activities</b>, may be relieved by rest<br />
+
+        <input type="checkbox" name="othersymptoms" value="OrthoMuscleFasciculation" id="othersymptoms"
+          disabled /><b>Recurrent
+          muscle
+          contraction without your action</b> (muscle fasciculation)<br />
+
+        <input type="checkbox" name="othersymptoms" value="OrthoInjury" id="othersymptoms" disabled />You experienced an
+        <b>injury,
+          fall or
+          trauma</b> preceding your main complaint in the previous page<br />
+
+        <input type="checkbox" name="othersymptoms" value="JointPain" id="othersymptoms" disabled />You have joint pain
+        and/or joint
+        stiffness with or without joint swelling<br />
+        <input type="checkbox" name="othersymptoms" value="MusclePain" id="othersymptoms" disabled />You have muscle
+        pain and/or
+        muscle stiffness<br />
+        <input type="checkbox" name="othersymptoms" value="JointDeformity" id="othersymptoms" disabled />You have
+        deformity or
+        unusual appearance of at least one joint<br />
+
+        <br><br><br>
+        <h3 class="fireBrick" id="eureka"></h3><br>
+        <input type="checkbox" name="checker" id="checker" onclick="detective()" required><b
+          style="color: firebrick;">click when done</b>
+        <br><br>
+
+        <br><br>
+        <button type="submit" class="next-btn" name="submit" id="submitbtn" disabled>Next</button>
+        <br><br>
+        <button type="reset" onClick="window.location.reload();">Reset</button>
+
+      </form>
+
+
+      <script>
+        var gotIt = document.getElementsByName("othersymptoms");
+        var yes = document.getElementById("yes");
+        var no = document.getElementById("no");
+
+        function detective() {
+          var myReka = [];
+          document.getElementById('eureka').innerHTML = "";
+          if (no.checked) {
+            document.getElementById("submitbtn").removeAttribute("disabled");
+
+          } else {
+            for (i = 0; i < othersymptoms.length; i++) {
+              myReka.push("one");
+              if (othersymptoms[i].checked) {
+                document.getElementById("submitbtn").removeAttribute("disabled");
+
+              }
+              if (othersymptoms.length === myReka.length && document.getElementById("submitbtn").disabled) {
+                document.getElementById('eureka').innerHTML = "Please check your other complaint(s); if not found, contact us (stating your age, gender and complaints) for possible future accommodation and any other action deemed necessary. Thank you";
+                document.getElementById("checker").checked = false
+              }
+            }
+          }
+
+
+        }
+
+
+
+
+        function symptomChecker() {
+          for (c = 0; c < gotIt.length; c++) {
+            if (gotIt[c].value !== "<%= Mainsymptom  %>" && yes.checked) {
+              gotIt[c].removeAttribute("disabled");
+            }
+          }
+        }
+
+        function stallBack() {
+          for (c = 0; c < gotIt.length; c++) {
+            gotIt[c].disabled = true;
+          }
+        }
+
+      </script>
+
+    </div>
+  </div>
+
+
+  <%- include("partials/footer"); -%>
