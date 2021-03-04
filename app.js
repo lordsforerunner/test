@@ -27,6 +27,13 @@ var gender;
 var mainsymptom;
 var othersymptoms;
 var possibilitiesAlt = "";
+// security
+
+const fs = require('fs');
+const cert = fs.readFileSync('/opt/bitnami/apache/conf/lordsforerunner.net.crt');
+//const ca = fs.readFileSync('/opt/bitnami/apache/conf/lordsforerunner.net.crt');
+const key = fs.readFileSync('/opt/bitnami/apache/conf/lordsforerunner.net.key');
+
 
 
 
