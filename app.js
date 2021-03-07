@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require ('mongoose');
 const ejs = require("ejs");
 
-
+const cookieSession = require('cookie-session');
 
 
 
@@ -14,7 +14,10 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static("public"));
-
+app.use(cookieSession({
+   name: 'lordsforerunner',
+   secret: "0b5ad47cc163d10dda665ac7f28508e00150dd9aed"
+}));
 
 var mainConditions = [];
 var otherConditions = [];
@@ -157,6 +160,22 @@ var thisAction = new Act ({
   
 //  });
 
+
+app.use(function(req, res, next){
+   //return res.json([req.url]);
+   if(req.url == "/"){
+      next();
+   }
+   else if(req.url == "/favicon.ico"){
+      next();
+   }
+   else if(req.session && req.session.home){
+      next();
+   }
+   else{
+      return res.redirect("/");
+   }
+});
 
 
 
